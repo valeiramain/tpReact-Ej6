@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-const ItemColor = ({ color }) => {
+const ItemColor = ({ color,borrarColor }) => {
     return (
         <Col>
             <Card>
@@ -13,7 +13,7 @@ const ItemColor = ({ color }) => {
                         <div className="border cuadrado" style={{ backgroundColor: color || "transparent" }}></div>
                     </article>
                     <div className="d-flex justify-content-end">
-                        <Button variant="secondary">Borrar</Button>
+                        <Button variant="secondary" onClick={()=>borrarColor(color)} >Borrar</Button>
                     </div>
                 </Card.Body>
             </Card>

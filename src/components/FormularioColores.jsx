@@ -17,7 +17,11 @@ const FormularioColores = () => {
         setArrayColores([...arrayColores, color.trim()])
         // e.target.reset()
         setColor('')
+    }
 
+    const borrarColor = (nombreColor) => {
+        const arrayFiltrado = arrayColores.filter((itemColor) => itemColor.toLowerCase().trim() !== nombreColor.toLowerCase().trim())
+        setArrayColores(arrayFiltrado)
     }
 
     return (
@@ -50,7 +54,7 @@ const FormularioColores = () => {
 
                 </Form>
             </section>
-                <ListaColores arrayColores={arrayColores}></ListaColores>
+            <ListaColores arrayColores={arrayColores} borrarColor={borrarColor}></ListaColores>
         </>
 
     );
